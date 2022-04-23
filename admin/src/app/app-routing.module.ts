@@ -1,47 +1,61 @@
-import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  NbAuthComponent,
+  NbLoginComponent,
+  NbLogoutComponent,
+  NbRegisterComponent,
+  NbRequestPasswordComponent,
+  NbResetPasswordComponent,
+} from '@nebular/auth';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./auth/login/login.module').then((m) => m.LoginModule),
-  },
-  {
-    path: 'register',
-    loadChildren: () =>
-      import('./auth/register/register.module').then((m) => m.RegisterModule),
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./pages/dashboard/dashboard.module').then((m) => m.DashboardModule),
-  },
+export const routes: Routes = [
   {
     path: 'pages',
-    loadChildren: () =>
-      import('./pages/pages.module').then((m) => m.PagesModule),
+    loadChildren: () => import('./pages/pages.module')
+      .then(m => m.PagesModule),
   },
   {
-    path: '404',
-    loadChildren: () =>
-      import('./error/error404/error404.module').then((m) => m.Error404Module),
+    path: 'auth',
+    component: NbAuthComponent,
+    children: [
+      {
+        path: '',
+        component: NbLoginComponent,
+      },
+      {
+        path: 'login',
+        component: NbLoginComponent,
+      },
+      {
+        path: 'register',
+        component: NbRegisterComponent,
+      },
+      {
+        path: 'logout',
+        component: NbLogoutComponent,
+      },
+      {
+        path: 'request-password',
+        component: NbRequestPasswordComponent,
+      },
+      {
+        path: 'reset-password',
+        component: NbResetPasswordComponent,
+      },
+    ],
   },
-  {
-    path: '**',
-    redirectTo: '404',
-    pathMatch: 'full'
-  },
+  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pages' },
 ];
 
+const config: ExtraOptions = {
+  useHash: false,
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
