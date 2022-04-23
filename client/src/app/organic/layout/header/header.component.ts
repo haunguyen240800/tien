@@ -1,4 +1,8 @@
+import { PopupCartComponent } from './../../popup/popup-cart/popup-cart.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
+declare var $: any;
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  openPopupCart: boolean = true;
+
+  constructor(
+    public dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onOpenPopupCart(){
+    if (this.openPopupCart){
+      this.openPopupCart = false;
+      $('body').addClass("overlay custom-popup");
+      const dialogRef = this.dialog.open(PopupCartComponent,{
+        data: {
+        },
+      });
+
+      dialogRef.afterClosed().subscribe(
+        result => {
+            this.openPopupCart = true;
+            $('body').removeClass("overlay custom-popup");
+        }
+    )
+
+    }
+  }
 }

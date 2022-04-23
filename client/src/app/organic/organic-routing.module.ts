@@ -37,8 +37,16 @@ const routes: Routes = [
         loadChildren: ()=> import("./checkout/checkout.module").then(m=>m.CheckoutModule)
       },
       {
+        path: 'product-detail',
+        loadChildren: ()=> import("./product/product.module").then(m=>m.ProductModule)
+      },
+      {
         path: 'about',
         loadChildren: ()=> import("./about/about.module").then(m=>m.AboutModule)
+      },
+      {
+        path: 'user-dashboard',
+        loadChildren: ()=> import("./user-dashboard/user-dashboard.module").then(m=>m.UserDashboardModule)
       },
     ]
   }

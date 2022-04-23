@@ -1,3 +1,4 @@
+import { ShareModule } from 'src/app/share/share.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { ServiceComponent } from './service.component';
   ],
   imports: [
     CommonModule,
-    ServiceRoutingModule
+    ServiceRoutingModule,
+    ShareModule
   ]
 })
 export class ServiceModule { }

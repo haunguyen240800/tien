@@ -169,11 +169,11 @@ if (document.getElementById('number')) {
 /* 
     4. Loader 
 ======================== */
-const preloader = document.querySelector('.loader');
+// const preloader = document.querySelector('.loader');
 
-window.addEventListener('load', (event) => {
-  preloader.style.display = 'none';
-});
+// window.addEventListener('load', (event) => {
+//   preloader.style.display = 'none';
+// });
 
 /* 
     5. Newsletter Modal

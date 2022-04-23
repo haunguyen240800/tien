@@ -1,3 +1,4 @@
+import { ScriptLoaderService } from 'src/app/service/load-script.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loadJsService: ScriptLoaderService) { }
 
   ngOnInit(): void {
+    this.loadJsService.brandNameSlideOne();
+    this.loadJsService.membersSliderOne();
   }
 
 }

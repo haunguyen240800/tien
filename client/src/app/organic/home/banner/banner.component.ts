@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScriptLoaderService } from 'src/app/service/load-script.service';
 declare var Swiper: any
 @Component({
   selector: 'app-banner',
@@ -7,23 +8,11 @@ declare var Swiper: any
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private loadJsService: ScriptLoaderService,
+  ) { }
 
   ngOnInit(): void {
-    var bannerThree = new Swiper('.banner-slider--03', {
-      spaceBetween: 15,
-      loop: true,
-      loopFillGroupWithBlank: true,
-      effect: 'fade',
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
+    this.loadJsService.bannerSlider03();
   }
-
 }

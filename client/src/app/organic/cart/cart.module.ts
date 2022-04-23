@@ -1,3 +1,4 @@
+import { ShareModule } from 'src/app/share/share.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { CartComponent } from './cart.component';
   ],
   imports: [
     CommonModule,
-    CartRoutingModule
+    CartRoutingModule,
+    ShareModule
   ]
 })
 export class CartModule { }
