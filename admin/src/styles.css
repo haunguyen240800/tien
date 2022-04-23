@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("./assets/font/CS-Interface/style.css");
+@import url("./assets/css/vendor/bootstrap.min.css");
+@import url("./assets/css/vendor/OverlayScrollbars.min.css");
+@import url("./assets/css/vendor/glide.core.min.css");
+@import url("./assets/css/vendor/introjs.min.css");
+@import url("./assets/css/vendor/select2.min.css");
+@import url("./assets/css/vendor/select2-bootstrap4.min.css");
+@import url("./assets/css/vendor/plyr.css");
+@import url("./assets/css/styles.css");
+@import url("./assets/css/main.css");
+
+
+/* <link rel="stylesheet" href="font/CS-Interface/style.css">
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="css/vendor/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="css/vendor/glide.core.min.css">
+<link rel="stylesheet" href="css/vendor/introjs.min.css">
+<link rel="stylesheet" href="css/vendor/select2.min.css">
+<link rel="stylesheet" href="css/vendor/select2-bootstrap4.min.css">
+<link rel="stylesheet" href="css/vendor/plyr.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/main.css"> */
