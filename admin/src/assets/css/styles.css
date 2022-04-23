@@ -12623,9 +12623,9 @@ html[data-placement="vertical"] section.scroll-section {
 }
 html[data-placement="horizontal"] .nav-container,
 html[data-placement="vertical"] .nav-container {
-  position: fixed;
+  position: sticky;
   top: 0;
-  bottom: 0;
+  margin-bottom: 1rem;
   z-index: 1001;
   background-repeat: no-repeat;
   background-size: cover;
