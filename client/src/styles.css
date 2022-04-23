@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("./assets/css/style.css");
+@import url("./assets/lib/css/bootstrap.min.css");
+@import url("./assets/lib/css/bvselect.css");
+@import url("./assets/lib/css/nouislider.min.css");
+@import url("./assets/lib/css/swiper-bundle.min.css");
+@import url("./assets/lib/css/venobox.css");
+
+/* html, body { height: 100%; } */
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
